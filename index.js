@@ -1,7 +1,6 @@
-let elapsedTime;
-let intervalId;
-let startTime;
-let updatedTime;
+let startTime = 0;
+let elapsedTime = 0;
+let timerInterval;
 
 function startStopwatch() {
 }
@@ -9,10 +8,6 @@ function startStopwatch() {
 function stopStopwatch() {}
 
 function resetStopwatch() {}
-
-function updateTime() {}
-
-function formatTime() {}
 
 // Button click event listeners
 document.getElementById("startBtn").addEventListener("click", startStopwatch);
