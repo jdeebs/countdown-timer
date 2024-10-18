@@ -2,9 +2,9 @@ Pseudocode for the Countdown Timer App
 
 #JS
 
-Track the current time (elapsedTime).
+Declare a variable to track the current time (elapsedTime).
 Declare a variable to control start/stop (intervalId).
-Store the start time and updated time (startTime, updatedTime).
+Declare a variable to store the start time and updated time (startTime, updatedTime).
 
 Start the stopwatch.
 Record the startTime.
