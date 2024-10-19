@@ -7,6 +7,8 @@ document.getElementById("timer").textContent = "00:00:00";
 function startTimer() {
   if (startTime === 0) {
     startTime = Date.now();
+  } else {
+    startTime = Date.now() - elapsedTime;
   }
   
   timerInterval = setInterval(() => {
@@ -17,6 +19,7 @@ function startTimer() {
 
 function stopTimer() {
   clearInterval(timerInterval);
+  startTime = elapsedTime;
 }
 
 function resetTimer() {
