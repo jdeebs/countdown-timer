@@ -19,7 +19,7 @@ function startTimer() {
 
 function stopTimer() {
   clearInterval(timerInterval);
-  startTime = elapsedTime;
+  elapsedTime = Date.now() - startTime;
 }
 
 function resetTimer() {
