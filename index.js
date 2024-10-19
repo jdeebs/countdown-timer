@@ -7,10 +7,12 @@ function startTimer() {
     timerInterval = setInterval(() => {
         elapsedTime = Date.now() - startTime;
         document.getElementById("timer").textContent = formatTime(elapsedTime);
-    }, 100); // Update every 100 milliseconds
+    }, 10); // Update every 10 milliseconds
 }
 
-function stopTimer() {}
+function stopTimer() {
+    clearInterval(timerInterval);
+}
 
 function resetTimer() {}
 
@@ -19,9 +21,10 @@ function formatTime(time) {
     const hours = Math.floor(totalSeconds / 3600);
     const minutes = Math.floor((totalSeconds % 3600) / 60);
     const seconds = totalSeconds % 60;
+    const milliseconds = Math.floor(time / 10);
 
     // Add leading zeros
-    const formattedTime = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+    const formattedTime = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}:${milliseconds.toString()}`;
 
     return formattedTime;
 }
