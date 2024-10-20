@@ -21,6 +21,8 @@ function startTimer() {
   }
   // Disable the start button while timer is running
   startButton.disabled = true;
+  // Enable stop button after timer starts
+  stopButton.disabled = false;
 
   // Create new interval to update every 1000ms
   timerInterval = setInterval(() => {
@@ -29,17 +31,20 @@ function startTimer() {
     // Update timer with formatted time
     document.getElementById("timer").textContent = formatTime(elapsedTime);
   }, 1000);
-
-  
 }
 
 function stopTimer() {
-  // Stops the interval, pausing the timer
-  clearInterval(timerInterval);
-  // Store elapsed time so it can be resumed later
-  elapsedTime = Date.now() - startTime;
-  // Enable start button while timer is paused
-  startButton.disabled = false;
+  // If timer is running
+  if (startButton.disabled === true) {
+    // Stops the interval, pausing the timer
+    clearInterval(timerInterval);
+    // Store elapsed time so it can be resumed later
+    elapsedTime = Date.now() - startTime;
+    // Enable start button while timer is paused
+    startButton.disabled = false;
+    // Disable stop button after pause
+    stopButton.disabled = true;
+  } else null;
 }
 
 function resetTimer() {
