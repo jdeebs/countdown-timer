@@ -8,6 +8,11 @@ const startButton = document.getElementById("startBtn");
 const stopButton = document.getElementById("stopBtn");
 const resetButton = document.getElementById("resetBtn");
 
+// Button click event listeners
+document.getElementById("startBtn").addEventListener("click", startTimer);
+document.getElementById("stopBtn").addEventListener("click", stopTimer);
+document.getElementById("resetBtn").addEventListener("click", resetTimer);
+
 // Default display for timer
 document.getElementById("timer").textContent = "00:00:00";
 
@@ -71,10 +76,3 @@ function formatTime(time) {
 
   return formattedTime;
 }
-
-// Button click event listeners
-document.getElementById("startBtn").addEventListener("click", startTimer);
-
-document.getElementById("stopBtn").addEventListener("click", stopTimer);
-
-document.getElementById("resetBtn").addEventListener("click", resetTimer);
