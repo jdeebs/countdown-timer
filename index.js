@@ -52,6 +52,9 @@ function resetTimer() {
   startTime = 0;
   elapsedTime = 0;
   document.getElementById("timer").textContent = "00:00:00";
+  // Ensure start/stop button is enabled after reset
+  startButton.disabled = false;
+  stopButton.disabled = false;
 }
 
 function formatTime(time) {
