@@ -19,6 +19,8 @@ function startTimer() {
     // If resuming, adjust startTime to account for elapsed time
     startTime = Date.now() - elapsedTime;
   }
+  // Disable the start button while timer is running
+  startButton.disabled = true;
 
   // Create new interval to update every 1000ms
   timerInterval = setInterval(() => {
@@ -26,8 +28,6 @@ function startTimer() {
     elapsedTime = Date.now() - startTime;
     // Update timer with formatted time
     document.getElementById("timer").textContent = formatTime(elapsedTime);
-    // Disable the start button while timer is running
-    startButton.disabled = true;
   }, 1000);
 
   
