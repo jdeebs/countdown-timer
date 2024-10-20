@@ -1,20 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles.css" />
-    <title>Stopwatch App</title>
-  </head>
-  <body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+  <title>Stopwatch App</title>
+</head>
+
+<body>
+  <div class="container">
     <h1>Stopwatch</h1>
 
     <div id="timer"></div>
 
-    <button id="startBtn">Start</button>
-    <button id="stopBtn">Stop</button>
-    <button id="resetBtn">Reset</button>
+    <div class="button-container">
+      <button class="button-pushable" id="startBtn" role="button">
+        <span class="button-shadow"></span>
+        <span class="button-edge"></span>
+        <span class="button-front text">
+          Start
+        </span>
+      </button>
+      <button class="button-pushable" id="stopBtn" role="button">
+        <span class="button-shadow"></span>
+        <span class="button-edge"></span>
+        <span class="button-front text">
+          Stop
+        </span>
+      </button>
+      <button class="button-pushable" id="resetBtn" role="button">
+        <span class="button-shadow"></span>
+        <span class="button-edge"></span>
+        <span class="button-front text">
+          Reset
+        </span>
+      </button>
+    </div>
+  </div>
 
-    <script src="index.js"></script>
-  </body>
+  <script src="index.js"></script>
+</body>
+
 </html>
