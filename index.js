@@ -3,6 +3,11 @@ let startTime = 0; // Stores timestamp when timer starts/resumes
 let elapsedTime = 0; // Tracks total time passed in milliseconds
 let timerInterval; // Holds the ID to control the timer
 
+// Button elements
+const startButton = document.getElementById("startBtn");
+const stopButton = document.getElementById("stopBtn");
+const resetButton = document.getElementById("resetBtn");
+
 // Default display for timer
 document.getElementById("timer").textContent = "00:00:00";
 
@@ -21,7 +26,11 @@ function startTimer() {
     elapsedTime = Date.now() - startTime;
     // Update timer with formatted time
     document.getElementById("timer").textContent = formatTime(elapsedTime);
+    // Disable the start button while timer is running
+    startButton.disabled = true;
   }, 1000);
+
+  
 }
 
 function stopTimer() {
@@ -29,6 +38,8 @@ function stopTimer() {
   clearInterval(timerInterval);
   // Store elapsed time so it can be resumed later
   elapsedTime = Date.now() - startTime;
+  // Enable start button while timer is paused
+  startButton.disabled = false;
 }
 
 function resetTimer() {
